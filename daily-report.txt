@@ -1,0 +1,21 @@
+Day One: (Tuesday/ April 26, 2022)
+____________________________________________________
+
+1. We have successfully created the database with the name of project
+2. Then we have added five different collection with the name Bank, Customer, Account, Address and Password.
+3. Each collection contains five different element.
+4. The Bank and Customer collection was handled by Archit Mori.
+5. The Account and Address was handled by Pankaj Shinde.
+6. The collection of Password was handled by Deepak Kanaujiya.
+
+
+Day two: (Wednesday/ April 27, 2022)
+____________________________________________________
+
+1. The backend logic which is in app.js file was developed with the login service, which was handled by Pankaj Shinde, Archit Mori. 
+
+
+
+Upcoming work:
+
+Other backend services will be taken care.  
