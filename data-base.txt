@@ -1,0 +1,82 @@
+
+> use DATABASE_bank
+switched to db DATABASE_bank
+
+> use bank;
+switched to db bank
+
+> db.createCollection('bank');
+{ "ok" : 1 }
+> db.createCollection('customer');
+{ "ok" : 1 }
+> db.createCollection('account');
+{ "ok" : 1 }
+> db.createCollection('address');
+{ "ok" : 1 }
+> db.createCollection('transaction');
+{ "ok" : 1 }
+> db.createCollection('password');
+{ "ok" : 1 }
+> show collections
+account
+address
+bank
+customer
+password
+transaction
+
+> db.bank.insert({_id:1, bank_name: "SBI" ,IFSC: "SBIN00030" ,branch: "Mumbai" ,total_customer:10});
+WriteResult({ "nInserted" : 1 })
+
+> db.customer.insertOne({_id: 1, bank_id:11, customer_name: "Pankaj", age:22, password: "pan123"});
+{ "acknowledged" : true, "insertedId" : 1 }
+> db.customer.insertOne({_id: 2, bank_id:11, customer_name: "Archit", age:23, password: "arc123"});
+{ "acknowledged" : true, "insertedId" : 2 }
+> db.customer.insertOne({_id: 3, bank_id:11, customer_name: "Deepak", age:22, password: "dee123"});
+{ "acknowledged" : true, "insertedId" : 3 }
+> db.customer.insertOne({_id: 4, bank_id:11, customer_name: "Rajesh", age:22, password: "raj123"});
+{ "acknowledged" : true, "insertedId" : 4 }
+
+> db.account.insertOne({_id:10, customer_id: 22, account_type:"saving", IFSC: "SBIN00030", password: "pan123", datetime: "2021-02-24 12:14", limit:3000,min_balance:800});
+{ "acknowledged" : true, "insertedId" : 10 }
+> db.account.insertOne({_id:11, customer_id: 23, account_type:"saving", IFSC: "SBIN00030", password: "arc123", datetime: "2021-02-24 12:14", limit:3000,min_balance:800});
+{ "acknowledged" : true, "insertedId" : 11 }
+> db.account.insertOne({_id:12, customer_id: 24, account_type:"saving", IFSC: "SBIN00030", password: "dee123", datetime: "2021-06-14 14:16", limit:3000,min_balance:800});
+{ "acknowledged" : true, "insertedId" : 12 }
+> db.account.insertOne({_id:13, customer_id: 25, account_type:"saving", IFSC: "SBIN00030", password: "raj123", datetime: "2021-08-04 12:24", limit:3000,min_balance:800});
+{ "acknowledged" : true, "insertedId" : 13 }
+
+> db.address.insertOne({_id: 40, street_name: "Jaiprakash Marg", state: "Maharashtra",city: "Mumbai", pin: 400032, customer_id:22});
+{ "acknowledged" : true, "insertedId" : 40 }
+
+> db.address.insertOne({_id: 41, street_name: "Apollo Street", state: "Maharashtra",city: "Mumbai", pin: 400352, customer_id:23});
+{ "acknowledged" : true, "insertedId" : 41 }
+> db.address.insertOne({_id: 42, street_name: "Azad Road", state: "Maharashtra",city: "Mumbai", pin: 400789, customer_id:24});
+{ "acknowledged" : true, "insertedId" : 42 }
+> db.address.insertOne({_id: 43, street_name: "Andheri Kurla Road", state: "Maharashtra",city: "Mumbai", pin: 400921, customer_id:25});
+{ "acknowledged" : true, "insertedId" : 43 }
+
+
+> db.transaction.insertOne({_id: 50, reference_num: 4501, account_num:500674312,type: "credit",datetime: "2021-02-25 12:52", bank_id:1, IFSC: "SBIN00030"});
+{ "acknowledged" : true, "insertedId" : 50 }
+> db.transaction.insertOne({_id: 51, reference_num: 4502, account_num:500902121, type: "credit",datetime: "2021-02-24 12:52", bank_id:1, IFSC: "SBIN00045"});
+{ "acknowledged" : true, "insertedId" : 51 }
+> db.transaction.insertOne({_id: 52, reference_num: 4503, account_num:500125627, type: "credit",datetime: "2021-06-14 12:52", bank_id:1, IFSC: "SBIN00055"});
+{ "acknowledged" : true, "insertedId" : 52 }
+> db.transaction.insertOne({_id: 53, reference_num: 4504, account_num:500088543, type: "credit",datetime: "2021-08-04 12:52", bank_id:1, IFSC: "SBIN00091"});
+{ "acknowledged" : true, "insertedId" : 53 }
+
+
+> db.password.insertOne({_id:35, customer_id:22, account_num:500674312, old_login_password: "pan123", new_login_password: "pan1234", login_datetime: "2021-02-25 25:14"});
+{ "acknowledged" : true, "insertedId" : 35 }
+> db.password.insertOne({_id:36, customer_id:23, account_num:500902121, old_login_password: "arc123", new_login_password: "arc1234", login_datetime: "2021-02-24 25:14"});
+{ "acknowledged" : true, "insertedId" : 36 }
+> db.password.insertOne({_id:37, customer_id:24, account_num:500125627, old_login_password: "dee123", new_login_password: "dee1234", login_datetime: "2021-06-14 25:14"});
+{ "acknowledged" : true, "insertedId" : 37 }
+> db.password.insertOne({_id:38, customer_id:25, account_num:500088543, old_login_password: "raj123", new_login_password: "raj1234", login_datetime: "2021-08-04 25:14"});
+{ "acknowledged" : true, "insertedId" : 38 }
+
+
+
+
+
