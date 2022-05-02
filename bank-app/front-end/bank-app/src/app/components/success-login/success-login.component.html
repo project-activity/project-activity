@@ -1,0 +1,47 @@
+<div class="container-fluid" class="row">
+  <div class="col-4" *ngIf="customer && account">
+    <table>
+      <div class="card" >
+        <img class="card-img-top">
+        <div class="card-body">
+          <p class="card-text">
+            <tr>
+              <th>Name:</th>
+              <td>{{customer.customer_name}}</td>
+            </tr>
+            <tr>
+              <th>Account Number:</th>
+              <td>{{account._id}}</td>
+            </tr>
+            <tr>
+              <th>Account Type:</th>
+              <th>{{account.account_type}}</th>
+            </tr>
+            <tr>
+              <th>Available Balance:</th>
+              <td>{{account.main_balance}}</td>
+            </tr>
+          </p>
+        </div>
+      </div>
+    </table>
+  </div>
+
+
+
+  <div class="col-5">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar navbar-light" style="background-color: #e3f2fd;">
+            <a routerLink="account-activity" class="nav-link text-dark" href="#">Account-activity</a>
+            <a routerLink="transfer" class="nav-link text-dark" href="#">Transfer</a>
+            <a routerLink="change-password" class="nav-link text-dark" href="#">Change-password</a>
+            <a routerLink="/home" class="nav-link text-dark">Logout</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <router-outlet></router-outlet>
+  </div>

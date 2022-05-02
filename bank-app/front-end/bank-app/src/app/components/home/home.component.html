@@ -1,0 +1,35 @@
+
+
+<html>
+<body class="bg-image"
+style="
+  height: 800px;
+">
+<form [formGroup] = "loginForm" (ngSubmit) = "handleSubmit()">	  
+
+<div class="login-box">
+  <h1>Login</h1>
+  <div class="textbox">
+    <i class="fas fa-user"></i>
+    <input formControlName = "_id" type = "number"  placeholder="Customer Id" >
+	<div [hidden]=" loginForm.controls['_id'].valid || loginForm.controls['_id'].pristine">
+		<span class="text-danger">Profile Id is required</span>
+	</div>
+  </div>
+
+  <div class="textbox">
+    <i class="fas fa-lock"></i>
+    <input formControlName = "password" type = "password" placeholder="Password">
+	<div [hidden]="loginForm.controls['password'].valid || loginForm.controls['password'].pristine">
+		<span class="text-danger">Password is required</span>
+	</div>
+  </div>
+
+  <input type="submit" class="btn" value="Login" [disabled]="loginForm.invalid">
+  
+</div>
+</form>
+
+  </body>
+  </html>
+
