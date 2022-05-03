@@ -14,7 +14,7 @@
             </tr>
             <tr>
                 <th><label>Name:</label></th>
-                <td><input formControlName="name" type="text" class="form-control" placeholder="Optional"></td>
+                <td><input formControlName="name" type="text" class="form-control" ></td>
             </tr>
             <tr>
                 <th><label>IFSC Code:</label></th>
@@ -31,7 +31,7 @@
                     <input formControlName="send_amount" type="text" class="form-control">
                     <div
                         [hidden]="FormValue.controls['send_amount'].valid || FormValue.controls['send_amount'].pristine">
-                        <span class="text-danger">Amount must be between 500 to 10000</span>
+                        <span class="text-danger">Amount must be between 100 to 1000</span>
                     </div>
                 </td>
             </tr>

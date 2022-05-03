@@ -30,7 +30,7 @@ export class ChangeTransferPasswordComponent implements OnInit {
   password = new FormControl('', Validators.required)
   again_pass = new FormControl('', Validators.required)
   handleUpdate() {
-   // if (this.password.value == this.again_pass.value) 
+   if (this.password.value == this.again_pass.value) 
    {
       this._actived_rout.parent?.parent?.params.subscribe({
         next: (params: Params) => {
@@ -51,9 +51,10 @@ export class ChangeTransferPasswordComponent implements OnInit {
           })
         }
       })
-    } //else {
-  //lert('password is not match')
-   // }
+    }  {
+
+      alert('password is not match')
+    }
   }
 
 }
