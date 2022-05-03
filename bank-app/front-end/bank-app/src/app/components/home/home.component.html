@@ -2,16 +2,15 @@
 
 <html>
 <body class="bg-image"
-style="
-  height: 800px;
-">
+style="height: 800px;background-image: url(https://imgk.timesnownews.com/story/SBI_IANS_2_5.jpg);"
+>
 <form [formGroup] = "loginForm" (ngSubmit) = "handleSubmit()">	  
 
 <div class="login-box">
-  <h1>Login</h1>
+  <h1>SBI login</h1>
   <div class="textbox">
     <i class="fas fa-user"></i>
-    <input formControlName = "_id" type = "number"  placeholder="Customer Id" >
+    <input formControlName = "_id" type = "number"  placeholder="Id" >
 	<div [hidden]=" loginForm.controls['_id'].valid || loginForm.controls['_id'].pristine">
 		<span class="text-danger">Profile Id is required</span>
 	</div>
